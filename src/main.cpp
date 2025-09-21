@@ -31,19 +31,10 @@ void loop() {
     float rms = sqrt(meanSquare);
 
     if (rms >= 500) {
-      digitalWrite(LEDR, HIGH);
-      digitalWrite(LEDG, LOW);
-      digitalWrite(LEDB, HIGH);
+      digitalWrite(LED_BUILTIN, HIGH);
     }
-    if (rms >= 250 && rms < 500) {
-      digitalWrite(LEDR, HIGH);
-      digitalWrite(LEDG, HIGH);
-      digitalWrite(LEDB, LOW);
-    }
-    if (rms >= 0 && rms < 250) {
-      digitalWrite(LEDR, LOW);
-      digitalWrite(LEDG, HIGH);
-      digitalWrite(LEDB, HIGH);
+    if (rms >= 0 && rms < 500) {
+      digitalWrite(LED_BUILTIN, LOW);
     }
 
     numSamples = 0;
